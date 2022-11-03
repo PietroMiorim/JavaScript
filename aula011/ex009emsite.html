@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidadões</title>
+</head>
+<body>
+    <h1>Qual é o seu país que voce Nasceu?</h1>
+    <h2>Digite abaixo o pais em que você nasceu</h2>
+    <input type="text" name="pais" id="ipais">
+    <input type="button" value="Verificar" onclick="caucular()">
+    <div id="res"></div>
+
+    <script>
+        function caucular() {
+            var ipais = window.document.getElementById('ipais')
+            var res = window.document.querySelector('id#res')
+            res.innerHTML = `<p> Você nasceu em ${ipais} e </p>`
+            if (ipais == Brasil) {
+                res.innerHTML += '<p> Você é Brasileiro! </p>'
+            } else {
+                res.innerHTML += '<p> Você e Estrangeiro! </p>'
+            }
+        }
+    </script>
+</body>
+</html>

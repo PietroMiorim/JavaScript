@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        h1{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    font-size: 15pt;
+}
+
+p {
+    font-size: 15pt;
+}
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    <p>Velocidade do carro:</p> <input type="number" name="vel" id="txtvel"> <p>Km/h</p> <br>
+    <input type="button" value="Verificar" onclick="caucular()">
+    <div id="res">
+
+    </div>
+
+    <script>
+        function caucular() {
+            var txtv = window.document.getElementById('txtvel')
+            var res = window.document.querySelector('div#res')
+            var vel = Number(txtv.value)
+            res.innerHTML = `<p> Sua velocidade atual é de <strong> ${vel} Km/h </strong> </p>`
+            if (vel > 60) {
+                res.innerHTML += `<p> Você esta <strong>MULTADO</strong> por excesso de velocidade!`
+            }
+            res.innerHTML +=`<p> Dirija sempre com sinto de segurança! </p>`
+
+        }
+    </script>
+</body>
+</html>
